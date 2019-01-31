@@ -120,13 +120,6 @@ class AppRouter extends Component {
 	renderList = list => {
 		const { limit, activePage } = this.state;
 
-		// this.setState({
-		// 	currentList: airCraftList.slice(
-		// 		activePage * limit - limit,
-		// 		activePage * limit
-		// 	)
-		// });
-
 		return list.slice(activePage * limit - limit, activePage * limit);
 	};
 
