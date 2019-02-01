@@ -84,19 +84,18 @@ class AppRouter extends Component {
 			)
 			.then(res => res.data)
 			.then(({ acList }) => {
-				// const { activePage, limit } = this.state;
+				const { activePage, limit } = this.state;
 
 				this.setState(
 					{
 						airCraftList: acList,
-						// currentList: acList.slice(
-						// 	activePage * limit - limit,
-						// 	activePage * limit
-						// ),
-						currentList: this.renderList(acList),
+						currentList: acList.slice(
+							activePage * limit - limit,
+							activePage * limit
+						),
 						loading: false
 					},
-					() => setInterval(this.refreshList, 6000)
+					() => setInterval(this.refreshList, 20000)
 				);
 			})
 			.catch(() => this.setState({ error: 'Error getting data from server!' }));
@@ -104,6 +103,7 @@ class AppRouter extends Component {
 
 	refreshList = () => {
 		const { latitude, longitude } = this.state.location;
+		const { activePage, limit } = this.state;
 
 		axios
 			.get(`${api_url}${latitude}&lng=${longitude}&fDstL=0&fDstU=1000`)
@@ -112,15 +112,23 @@ class AppRouter extends Component {
 
 				this.setState({
 					airCraftList,
-					currentList: this.renderList(airCraftList)
+					currentList: airCraftList.slice(
+						activePage * limit - limit,
+						activePage * limit
+					)
 				});
 			});
 	};
 
-	renderList = list => {
-		const { limit, activePage } = this.state;
+	renderList = () => {
+		const { limit, activePage, airCraftList } = this.state;
 
-		return list.slice(activePage * limit - limit, activePage * limit);
+		this.setState({
+			currentList: airCraftList.slice(
+				activePage * limit - limit,
+				activePage * limit
+			)
+		});
 	};
 
 	handlePageChange = pageNumber => {

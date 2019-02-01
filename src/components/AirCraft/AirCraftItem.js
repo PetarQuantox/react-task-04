@@ -10,12 +10,12 @@ const AirCraftItem = props => {
 	return (
 		<Consumer>
 			{({ getAircraftById }) => (
-				<tr>
+				<tr className="aircraft-item">
 					<td>{props.data.Id}</td>
-					<td>
+					<td className="logo--sm">
 						<img
 							alt=""
-							style={{ height: '100px', maxWidth: '150px' }}
+							className="aircraft-image"
 							src={`//logo.clearbit.com/${
 								props.data.Op === undefined
 									? null
@@ -32,8 +32,9 @@ const AirCraftItem = props => {
 					<td>
 						<Link
 							to={`/aircraft-details/${props.data.Id}`}
-							onClick={() => getAircraftById(props.data.Id)}>
-							Details
+							onClick={() => getAircraftById(props.data.Id)}
+						>
+							<i className="far fa-arrow-alt-circle-right" />
 						</Link>
 					</td>
 				</tr>

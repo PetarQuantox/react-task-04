@@ -6,15 +6,16 @@ const AirCraftList = () => {
 	return (
 		<Consumer>
 			{({ currentList }) => (
-				<table>
+				<table className="aircraft-table">
 					<thead>
 						<tr>
 							<th>Id</th>
-							<th>Logo</th>
+							<th className="logo--sm">Logo</th>
 							<th>Country</th>
 							<th>Company</th>
 							<th>From</th>
 							<th>To</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
