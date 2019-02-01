@@ -32,8 +32,7 @@ const AirCraftItem = props => {
 					<td>
 						<Link
 							to={`/aircraft-details/${props.data.Id}`}
-							onClick={() => getAircraftById(props.data.Id)}
-						>
+							onClick={() => getAircraftById(props.data.Id)}>
 							<i className="far fa-arrow-alt-circle-right" />
 						</Link>
 					</td>

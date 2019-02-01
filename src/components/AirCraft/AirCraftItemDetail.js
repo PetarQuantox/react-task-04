@@ -14,10 +14,14 @@ class AirCraftItemDetail extends Component {
 			<Consumer>
 				{({ activeItem }) => (
 					<div className="container">
-						<Link to="/">Back</Link>
-						<div className="card-panel hoverable center-align">
+						<Link to="/">
+							<span className="link">
+								<i className="far fa-arrow-alt-circle-left" /> Back to list
+							</span>
+						</Link>
+						<div className="aircraft-item-details ">
 							<img
-								alt=""
+								alt="Logo"
 								src={`//logo.clearbit.com/${
 									activeItem.Op === undefined
 										? null
@@ -25,12 +29,34 @@ class AirCraftItemDetail extends Component {
 								}.com`}
 								onError={e => (e.target.src = placeholder)}
 							/>
-							<div>Id: {activeItem.Id}</div>
-							<div>Company: {activeItem.Op}</div>
-							<div>Latitude: {activeItem.Lat}</div>
-							<div>Longitude: {activeItem.Long}</div>
-							<div>From: {activeItem.From}</div>
-							<div> To:{activeItem.To} </div>
+							<div className="detail">
+								<span className="detail__coulm">Id</span>
+								<span className="detail__value">{activeItem.Id}</span>
+							</div>
+							<div className="detail">
+								<span className="detail__coulm">Company</span>
+								<span className="detail__value">{activeItem.Op}</span>
+							</div>
+							<div className="detail">
+								<span className="detail__coulm">Latitude</span>
+								<span className="detail__value">{activeItem.Lat}</span>
+							</div>
+							<div className="detail">
+								<span className="detail__coulm">Longitude</span>
+								<span className="detail__value"> {activeItem.Long}</span>
+							</div>
+							<div className="detail">
+								<span className="detail__coulm">From</span>
+								<span className="detail__value">
+									{activeItem.From || 'Unknown'}
+								</span>
+							</div>
+							<div className="detail">
+								<span className="detail__coulm">To</span>
+								<span className="detail__value">
+									{activeItem.To || 'Unknown'}
+								</span>
+							</div>
 						</div>
 					</div>
 				)}

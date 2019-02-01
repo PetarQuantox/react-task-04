@@ -1,27 +1,25 @@
 .btn {
-    text-decoration: none;
-    color: #fff;
-    background-color: #26a69a;
-    text-align: center;
-    letter-spacing: .5px;
-    -webkit-transition: background-color .2s ease-out;
-    transition: background-color .2s ease-out;
-    cursor: pointer;
-    padding: 4px;
-}
+    padding: 0.6rem;
+    width: 30rem;
+    margin: 4rem auto;
+    display: block;
+    background-image: linear-gradient(to right bottom, #866bd1, #8278d8, #7f84dd, #7e8fe1, #809ae4, #76a7ed, #6eb3f3, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);    border: none;
+    border-radius: 0.3rem;
+    border: none;
+    font-size: 2rem;
+    color: #f3f3f3;
+    font-weight: bold;
+    line-height: 36px;
+    letter-spacing: .2rem;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 
-.waves-effect {
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-    overflow: hidden;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    vertical-align: middle;
-    z-index: 1;
-    -webkit-transition: .3s ease-out;
-    transition: .3s ease-out;
+    @include respond-to(phone) {
+        width: 26rem;
+    }
+
+
+    &:hover {
+        cursor: pointer;
+    }
 }

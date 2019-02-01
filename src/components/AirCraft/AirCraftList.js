@@ -15,7 +15,7 @@ const AirCraftList = () => {
 							<th>Company</th>
 							<th>From</th>
 							<th>To</th>
-							<th>Action</th>
+							<th>Details</th>
 						</tr>
 					</thead>
 					<tbody>

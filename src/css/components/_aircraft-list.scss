@@ -2,10 +2,20 @@
 	text-align: center;
 	width: 100%;
 	border-collapse: collapse;
+	font-size: 1.7rem;
+	
+	@include respond-to(phone) {
+		margin-top: 4rem;
+		font-size: 1.4rem;
+	}
 
+	tr {
+		background: #FEFEDF;
+	}
 	tr:nth-of-type(odd) {
 		background: #afafdc;
 	}
+
 	th {
 		background: #443b68;
 		padding: 1rem;
@@ -27,11 +37,6 @@
 			position: absolute;
 			top: -9999px;
 			left: -9999px;
-		}
-
-		tr {
-			// border-bottom: 1px solid red;
-			// margin-bottom: 1rem;s
 		}
 		td {
 			border: none;
